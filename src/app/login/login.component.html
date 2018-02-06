@@ -1,0 +1,16 @@
+
+<form class="form-group" [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
+<div>
+    UserName:
+    <input class="form-control" formControlName="UserName" placeholder="Enter Name">
+    <label *ngIf="userForm.controls.UserName.invalid" [ngClass]="'error'"> username is required with 10 max character. </label>
+  </div>
+  <div>
+    Password:
+    <input input type="password" class="form-control" formControlName="password" placeholder="Enter Password">
+    <label *ngIf="userForm.controls.password.invalid" [ngClass]="'error'"> Password is required with 10 max character. </label>
+  </div>
+  <div>
+      <button class="btn btn-primary" type="submit">Submit</button>
+  </div>
+    </form>

@@ -1,0 +1,40 @@
+
+<form class="form-group" [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
+  <div>
+    Firstname:
+    <input class="form-control" formControlName="Firstname" placeholder="Enter Name">
+    <label *ngIf="userForm.controls.Firstname.invalid" [ngClass]="'error'"> Name is required with 10 max character. </label>
+  </div>
+  <div>
+    Lastname:
+    <input class="form-control" formControlName="Lastname" placeholder="Enter Name">
+    <label *ngIf="userForm.controls.Lastname.invalid" [ngClass]="'error'"> Lastname is required with 10 max character. </label>
+  </div>
+  <div>
+    UserName:
+    <input class="form-control" formControlName="UserName" placeholder="Enter Name">
+    <label *ngIf="userForm.controls.UserName.invalid" [ngClass]="'error'"> username is required with 10 max character. </label>
+  </div>
+  <div>
+    <div>
+      Email:
+      <input class="form-control" formControlName="email" placeholder="Enter Email">
+      <label *ngIf="userForm.controls.email.invalid" [ngClass]="'error'"> House Number is required. </label>
+
+    </div>
+    Password:
+    <input input type="password" class="form-control" formControlName="password" placeholder="Enter Password">
+    <label *ngIf="userForm.controls.password.invalid" [ngClass]="'error'"> Password is required with 10 max character. </label>
+  </div>
+  <div>
+    Age:
+    <input class="form-control" formControlName="age" placeholder="Enter Age">
+    <label *ngIf="userForm.get('age').invalid" [ngClass]="'error'"> Age is required. </label>
+  </div>
+  <div>
+  Select Gender:
+  <input  type="radio" formControlName="gender" value="male"> Male
+  <input  type="radio" formControlName="gender" value="female"> Female
+  </div>
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>
