@@ -1,48 +1,34 @@
-<div class="container">
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-      <div class="navbar-header">
 
-        <a class="navbar-brand" routerLink="/login">login </a>
-
-
-        <a class="navbar-brand" routerLink="/signup">Signup</a>
-
-
-        <!-- <a class="navbar-brand" routerLink="/showusers">users</a> -->
-
-      
-
-      <form class="form-group" [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
+<form class="form-group" [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
         <div>
           Firstname:
-          <input class="form-control" formControlName="Firstname" placeholder="Enter Name">
+          <input class="form-control" formControlName="Firstname">
           <label *ngIf="userForm.controls.Firstname.invalid" [ngClass]="'error'"> Name is required with 10 max character. </label>
         </div>
         <div>
           Lastname:
-          <input class="form-control" formControlName="Lastname" placeholder="Enter Name">
+          <input class="form-control" formControlName="Lastname"  >
           <label *ngIf="userForm.controls.Lastname.invalid" [ngClass]="'error'"> Lastname is required with 10 max character. </label>
         </div>
         <div>
           UserName:
-          <input class="form-control" formControlName="UserName" placeholder="Enter Name">
+          <input class="form-control" formControlName="UserName" >
           <label *ngIf="userForm.controls.UserName.invalid" [ngClass]="'error'"> username is required with 10 max character. </label>
         </div>
         <div>
           <div>
             Email:
-            <input class="form-control" formControlName="email" placeholder="Enter Email">
+            <input class="form-control" formControlName="email" >
             <label *ngIf="userForm.controls.email.invalid" [ngClass]="'error'"> House Number is required. </label>
 
           </div>
           Password:
-          <input input type="password" class="form-control" formControlName="password" placeholder="Enter Password">
+          <input input type="password" class="form-control" formControlName="password" >
           <label *ngIf="userForm.controls.password.invalid" [ngClass]="'error'"> Password is required with 10 max character. </label>
         </div>
         <div>
           Age:
-          <input class="form-control" formControlName="age" placeholder="Enter Age">
+          <input class="form-control" formControlName="age" >
           <label *ngIf="userForm.get('age').invalid" [ngClass]="'error'"> Age is required. </label>
         </div>
         <div>
@@ -52,7 +38,3 @@
         </div>
         <button class="btn btn-primary" type="submit">Submit</button>
       </form>
-    </div>
-  </div>
-  </nav>
-  </div>

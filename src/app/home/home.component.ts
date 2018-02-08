@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Users } from '../models/users';
+import { Router, ActivatedRoute } from '@angular/router';
 import { LogindataService } from '../logindata.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { LogindataService } from '../logindata.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private logindataservice: LogindataService) { } 
+  constructor(private logindataservice: LogindataService,public router: Router) { } 
   users: Users[];
 
   ngOnInit() {
@@ -21,6 +22,10 @@ export class HomeComponent implements OnInit {
     .subscribe(users=> {
       this.users = users;
     });
+  }
+  editUser(item){
+    this.logindataservice.setItem(item);
+    this.router.navigate(["edituser"])
   }
 
 }

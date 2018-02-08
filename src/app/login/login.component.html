@@ -1,3 +1,15 @@
+<div class="container">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+
+        <a class="navbar-brand" routerLink="/login">login </a>
+
+
+        <a class="navbar-brand" routerLink="/signup">Signup</a>
+
+
+        <!-- <a class="navbar-brand" routerLink="/showusers">users</a> -->
 
 <form class="form-group" [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
 <div>
@@ -13,4 +25,11 @@
   <div>
       <button class="btn btn-primary" type="submit">Submit</button>
   </div>
+  <div>
+    <label>{{message}}</label>
+  </div>
     </form>
+  </div>
+</div>
+</nav>
+</div>

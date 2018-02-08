@@ -1,11 +1,23 @@
-<h1>Users</h1>
-<div   *ngFor="let item of users" class="row col-md-12" >
-  
-    <div class="well well-info">
-        <span class="text-info"> {{item.email}}</span>
-    </div>
-    <div class="well well-info">
-            <span class="text-info"> {{item.UserName}}</span>
-        </div>
-  
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>UserName</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of users" class="row col-md-12" class="success">
+                <td>{{item.UserName}}</td>
+                <td>{{item.Firstname}}</td>
+                <td>{{item.email}}</td>
+                <td>
+                    <button type="button" class="btn btn-default btn-sm" (click)="editUser(item)">
+                        <span class="glyphicon glyphicon-pencil"></span> Edit
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

@@ -1,3 +1,5 @@
+
+
 export interface Users {
     Firstname: String,
 	Lastname: String,
@@ -5,6 +7,7 @@ export interface Users {
 	age: String,
 	email: String,
 	gender: String,
-	password:String
+	password:String,
+	
 }
 	
